@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Safe Space 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LAYER 1: HALAMAN LOGIN SECURITY -->
+  <div id="login-layer" class="card">
+    <div class="lock-icon">🔒</div>
+    <h2>Ruang Khusus</h2>
+    <p class="subtitle">Masukan data diri untuk membuka ruang tenangmu...</p>
+
+    <div class="input-group">
+      <label>Nama Kamu (Pacar):</label>
+      <input type="text" id="partner-name" placeholder="Contoh: Kila">
+    </div>
+
+    <div class="input-group">
+      <label>Nama Pembuat Web (Kamu):</label>
+      <input type="text" id="your-name" placeholder="Contoh: Nama Kamu">
+    </div>
+
+    <div class="input-group">
+      <label>Tanggal Jadian Kalian:</label>
+      <input type="date" id="anniversary-date">
+    </div>
+
+    <button class="primary-btn" onclick="checkLogin()">Buka Ruang Rahasia 🔑</button>
+    <p id="login-error" class="error-msg hidden">Data yang kamu masukkan belum cocok nih, coba cek lagi yaa! 🥺</p>
+  </div>
+
+  <!-- LAYER 2: HALAMAN UTAMA (SAFE SPACE) -->
+  <div id="app-layer" class="card hidden">
+    <!-- Pemutar Musik Ambient -->
+    <div class="music-player">
+      <button id="music-btn" onclick="toggleAudio()">🎵 Musik Relaksasi</button>
+    </div>
+
+    <header>
+      <div class="streak-badge">
+        <span>🔥</span> <span id="streak-count">0</span> Hari Streak
+      </div>
+      <h1>Hai Sayang 🌿</h1>
+      <p class="subtitle">Ini ruang tenang khusus buat kamu. Gimana perasaanmu hari ini?</p>
+    </header>
+
+    <!-- Counter Durasi Hubungan LDR -->
+    <div class="timer-card">
+      <p class="timer-title">Kita Sudah Bersama Selama:</p>
+      <div id="relationship-timer" class="timer-display">-- Hari -- Jam -- Mnt -- Detik</div>
+    </div>
+
+    <!-- Tombol Check-In Harian -->
+    <div class="checkin-section">
+      <button id="checkin-btn" class="primary-btn" onclick="doCheckIn()">✨ Check-In Hari Ini ✨</button>
+      <p id="checkin-status" class="status-text"></p>
+    </div>
+
+    <!-- Pilihan Mood -->
+    <div class="mood-grid">
+      <button onclick="selectMood('capek')">😴 Capek / Lowbatt</button>
+      <button onclick="selectMood('overthinking')">🌧️ Overthinking</button>
+      <button onclick="selectMood('kangen')">🧸 Kangen Kamu</button>
+      <button onclick="selectMood('tenang')">🌙 Butuh Keheningan</button>
+    </div>
+
+    <!-- Respon Pesan Mood -->
+    <div id="response-card" class="response-card hidden">
+      <p id="response-text"></p>
+      <button onclick="closeCard()" class="close-btn">Simpan ke Hati 🤍</button>
+    </div>
+
+    <!-- Quality Time & Presence Card (LDR-Friendly) -->
+    <div class="qt-section">
+      <h3>Quality Time & Presence Card 🤍</h3>
+      <p class="qt-sub">Pilih salah satu aktivitas kalau kamu lagi butuh waktu atau kehadiran aku yaa...</p>
+      
+      <div class="qt-grid">
+        <button onclick="requestQT('Nonton Film Bareng Online 🎬')">🎬 Nonton Bareng</button>
+        <button onclick="requestQT('Deep Talk Santai Sebelum Tidur 💬')">💬 Deep Talk</button>
+        <button onclick="requestQT('Quiet Call / Temenin Tanpa Ngobrol 🎧')">🎧 Quiet Call</button>
+        <button onclick="requestQT('Main Game Santai Bareng 🎮')">🎮 Game Bareng</button>
+      </div>
+
+      <p id="qt-status" class="status-text hidden"></p>
+    </div>
+
+    <!-- Toples Pesan Acak -->
+    <div class="jar-section">
+      <h3>Toples Pesan Acak 🫙</h3>
+      <p class="jar-sub">Ambil 1 pesan penyemangat kapan pun kamu butuh.</p>
+      <button class="jar-btn" onclick="getRandomNote()">Buka Toples 💌</button>
+      <div id="note-display" class="note-box hidden"></div>
+    </div>
+
+    <!-- Tombol Logout -->
+    <button class="logout-btn" onclick="logout()">Keluar 🚪</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
