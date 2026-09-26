@@ -1,9 +1,9 @@
 // =================================================================
-// ⚙️ PENGATURAN DATA VALIDASI LOGIN & WHATSAPP (UBAH DI SINI)
+// ⚙️ PENGATURAN DATA VALIDASI LOGIN & WHATSAPP 
 // =================================================================
 const AUTH_CONFIG = {
   // Masukkan variasi nama panggilannya (Gunakan HURUF KECIL SEMUA)
-  partnerNames: ["ale", "jalan"], 
+  partnerNames: ["ale", "jalal"], 
   
   // Masukkan variasi nama kamu (Gunakan HURUF KECIL SEMUA)
   yourNames: ["kila", "nabhita", "nabhita akhilla"], 
